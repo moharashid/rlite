@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Reddit lite</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- Latest compiled and minified CSS (Boostrap) -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#">Reddit Lite</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/users">View Users</a></li>
+            <li><a href="/addfeeds">Post to feed</a></li> 
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        <% feeds.forEach(function(feed){ %>
+      <div class="well">
+          <div class="row">
+            
+
+              <div class="col-lg-4">
+                  <div class="thumbnail">
+                      <img src="<%=feed.image%>" alt="">
+                    </div>
+              </div>
+              <div class="col-lg-8">
+                  <h4><%= feed.topic %></h4>
+                  <p><%= feed.details %></p>
+              </div>
+              
+            </div>
+
+      </div>
+      <% }) %>
+     
+    </div>
+    
+  </body>
+</html>
